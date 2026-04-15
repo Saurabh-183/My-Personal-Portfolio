@@ -10,7 +10,7 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/saurabh181/",
     avatar: "https://avatars.githubusercontent.com/u/178274919?v=4",
     summary:
-      "Performance-driven Frontend Software Developer with over 1.5 years of experience specializing in React.js, Next.js, and TypeScript. Proven track record of building responsive, user-centric web applications and managing complex state architectures. Adept at collaborating in agile environments to deliver scalable, high-quality software solutions.",
+      "Performance-driven Frontend Software Developer with over 1.5 years of experience specializing in React.js, Next.js, TypeScript with Tailwind CSS. Proven track record of building responsive, user-centric web applications and managing complex state architectures. Adept at collaborating in agile environments to deliver scalable, high-quality software solutions.",
   },
 
   skills: [
@@ -24,15 +24,15 @@ export const portfolioData = {
     },
     {
       category: "Backend & Database",
-      items: ["Node.js", "PHP", "MySQL", "MongoDB", "Firebase"],
+      items: ["Node.js", "MySQL", "MongoDB", "Firebase"],
     },
     {
       category: "Advanced React",
-      items: ["Hooks", "Context API", "Reducers", "SSR", "SSG", "REST APIs"],
+      items: ["Hooks", "Context API", "REST APIs", "Reducers", "SSR", "Authentication"],
     },
     {
       category: "Tools",
-      items: ["Git", "Postman", "VS Code", "IntelliJ IDEA", "DBMS"],
+      items: ["Git", "Postman", "VS Code", "IntelliJ IDEA", "DBMS", "Figma", "Jira", "Workbench", "XAMPP"],
     },
   ],
 
@@ -40,7 +40,7 @@ export const portfolioData = {
     {
       company: "Harij Softech Private Limited",
       role: "Frontend Developer",
-      period: "Nov 2024 — Present",
+      period: "Nov 2024 — APR 2026",
       location: "Gurugram, Haryana",
       points: [
         "Developed and maintained highly responsive web applications using Next.js and Tailwind CSS, ensuring cross-device compatibility for desktop, tablet, and mobile.",
@@ -72,10 +72,10 @@ export const portfolioData = {
     },
     {
       num: "003",
-      title: "Ctrl-F Admin Management Platform",
+      title: "Ctrl+F (AI-Powered Quotation Making Tool)",
       description:
-        "IT services company platform that builds reliable and scalable web applications with a dedicated admin management system for managing users and permissions across the organization.",
-      stack: ["TypeScript", "Next.js", "React"],
+        "IT services company platform that builds a web-based search tool to efficiently retrieve data using keyword-based filtering.Integrated MySQL for efficient data storage, indexing, and querying, improving search performance and response time",
+      stack: [ "Next.js", "React", "TypeScript", "TailwindCSS", "MySQL"],
       github: "https://github.com/Saurabh-183/Ctrl-f",
       featured: false,
     },
@@ -124,5 +124,5 @@ export const portfolioData = {
     cgpa: "8.1 / 10",
   },
 
-  hobbies: ["Story Writing", "Cricket", "Music", "Photography"],
+  hobbies: ["Story Writing", "Cricket", "Music", "Photography", "Traveling", "Cooking", "Gaming", "Fitness", "Book Reading"],
 };
