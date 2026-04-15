@@ -58,7 +58,7 @@ export const portfolioData = {
       description:
         "AI-powered visitor system featuring real-time face registration and contactless identification. Automated entry workflows with QR-based validation, role-based access control, and secure data encryption for organizational security.",
       stack: ["Next.js", "TypeScript", "TailwindCSS", "MySQL"],
-      github: "https://github.com/Saurabh-183",
+      github: "https://signpass-vms.vercel.app/",
       featured: true,
     },
     {
@@ -109,11 +109,11 @@ export const portfolioData = {
   ],
 
   certifications: [
-    { name: "Google Data Analytics", issuer: "MSME", icon: "📊" },
-    { name: "Machine Learning in Python", issuer: "machinelearning.org.in", icon: "🤖" },
-    { name: "Data Visualization", issuer: "TATA Group · Forage", icon: "📈" },
-    { name: "Project Management", issuer: "TATA Group · Forage", icon: "🗂️" },
-    { name: "Microsoft Excel", issuer: "MSME", icon: "📋" },
+    { name: "Google Data Analytics", issuer: "MSME", icon: "📊", url: "https://drive.google.com/file/d/1ybOSSnPKZS62c83VqCYSSsbQWLkd7I8W/view?pli=1"},
+    { name: "Machine Learning in Python", issuer: "machinelearning.org.in", icon: "🤖", url: "https://drive.google.com/file/d/1yaMHPg-bLG6Dhi4rzMzwttBmuCkgx9nF/view" },
+    { name: "Data Visualization", issuer: "TATA Group · Forage", icon: "📈", url: "https://drive.google.com/file/d/1yg8YfOXkcW8Zq7ifRGM4EGOnxGpxaseG/view" },
+    { name: "Project Management", issuer: "TATA Group · Forage", icon: "🗂️", url: "https://drive.google.com/file/d/1yg9d7VYiIzQGXB3-fwuZSSmZRXSEA_Ng/view" },
+    { name: "Microsoft Excel", issuer: "MSME", icon: "📋", url: "https://drive.google.com/file/d/1ycp_Ycfae8fRnVNqm00dq2qXiW5dkkS7/view" },
   ],
 
   education: {
