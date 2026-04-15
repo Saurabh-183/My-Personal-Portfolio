@@ -28,11 +28,11 @@ export const portfolioData = {
     },
     {
       category: "Advanced React",
-      items: ["Hooks", "Context API", "REST APIs", "Reducers", "SSR", "Authentication"],
+      items: ["Hooks", "REST APIs", "Context API", "Reducers", "SSR", "Authentication"],
     },
     {
       category: "Tools",
-      items: ["Git", "Postman", "VS Code", "IntelliJ IDEA", "DBMS", "Figma", "Jira", "Workbench", "XAMPP"],
+      items: ["Git", "Postman", "VS Code", "IntelliJ IDEA", "Figma", "Jira", "Workbench", "XAMPP"],
     },
   ],
 
@@ -118,11 +118,27 @@ export const portfolioData = {
 
   education: {
     degree: "Bachelor of Computer Applications",
-    university: "CSJM University",
+    university: "CSJM University Kanpur (Computer Application)",
     location: "Kanpur, Uttar Pradesh",
     period: "Jul 2021 — Jun 2024",
     cgpa: "8.1 / 10",
   },
 
+   intermediate: {
+    degree: "Intermediate (12th Grade)",
+    school: "SVM Inter College (Maths Stream)",
+    location: "Unnao, Uttar Pradesh",
+    period: "Jul 2020 — Jun 2021",
+    cgpa: "85.40 %",
+  },
+
+  highschool: {
+    degree: " High School (10th Grade)",
+    school: "SVM Inter College (Science Stream)",
+    location: "Unnao, Uttar Pradesh",
+    period: "Jul 2019 — Jun 2020",
+    cgpa: "85.00 %",
+  },
+ 
   hobbies: ["Story Writing", "Cricket", "Music", "Photography", "Traveling", "Cooking", "Gaming", "Fitness", "Book Reading"],
 };

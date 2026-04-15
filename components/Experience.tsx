@@ -48,6 +48,40 @@ export default function Experience() {
             </div>
           </div>
         </Reveal>
+
+        <Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-16 py-12">
+            <div>
+              <p className="font-mono text-[#00f5d4] text-sm leading-relaxed">{portfolioData.intermediate.period}</p>
+              <p className="text-[#7a99a8] text-xs font-mono mt-1">{portfolioData.intermediate.location}</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-1">{portfolioData.intermediate.degree}</h3>
+              <p className="font-mono text-[#7a99a8] text-sm mb-4">{portfolioData.intermediate.school}</p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[rgba(0,245,212,0.05)] border border-[rgba(0,245,212,0.15)]">
+                <span className="text-[#00f5d4] font-mono text-sm">Percentage</span>
+                <span className="text-white font-bold">{portfolioData.intermediate.cgpa}</span>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-16 py-12">
+            <div>
+              <p className="font-mono text-[#00f5d4] text-sm leading-relaxed">{portfolioData.highschool.period}</p>
+              <p className="text-[#7a99a8] text-xs font-mono mt-1">{portfolioData.highschool.location}</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-1">{portfolioData.highschool.degree}</h3>
+              <p className="font-mono text-[#7a99a8] text-sm mb-4">{portfolioData.highschool.school}</p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[rgba(0,245,212,0.05)] border border-[rgba(0,245,212,0.15)]">
+                <span className="text-[#00f5d4] font-mono text-sm">Percentage</span>
+                <span className="text-white font-bold">{portfolioData.highschool.cgpa}</span>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

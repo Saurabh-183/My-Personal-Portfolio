@@ -14,9 +14,10 @@ export default function Certifications() {
               data-hover
               className="bg-[#0a1118] border border-[rgba(0,245,212,0.15)] p-6 flex flex-col gap-2 transition-all duration-300 hover:border-[rgba(0,245,212,0.35)] hover:bg-[#0f1922] hover:-translate-y-1"
             >
-              <span className="text-2xl">{cert.icon}</span>
+              {/* <span className="text-2xl">{cert.icon}</span> */}
               <p className="font-semibold text-sm leading-tight text-[#e8f4f8]">{cert.name}</p>
               <p className="font-mono text-[#00f5d4] text-[0.65rem] tracking-wider uppercase">{cert.issuer}</p>
+              <a href={cert.url} target="_blank" rel="noopener noreferrer" className="text-[#00f5d4] hover:underline" >View </a>
             </div>
           </Reveal>
         ))}

@@ -56,7 +56,7 @@ export default function Hero() {
           className="font-mono text-[#7a99a8] text-sm md:text-base mb-6"
           style={{ animation: "fadeUp 0.8s 0.6s both" }}
         >
-          React.js · Next.js · TypeScript
+          React.js · Next.js · Node.js · Tailwind CSS ·  MySQL
         </p>
 
         {/* Summary */}
