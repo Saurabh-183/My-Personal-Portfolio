@@ -5,19 +5,19 @@ export default function Contact() {
   const { personal } = portfolioData;
 
   return (
-    <section id="contact" className="py-28 px-8 md:px-16 bg-[#0a1118]">
+    <section id="contact" className="py-28 px-8 md:px-16 bg-theme-card max-w-6xl mx-auto">
       <div className="max-w-2xl mx-auto text-center">
         <Reveal>
-          <p className="font-mono text-[#00f5d4] text-xs tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3">
-            <span className="w-8 h-px bg-[#00f5d4]" />
+          <p className="font-mono text-theme-accent text-xs tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3">
+            <span className="w-8 h-px bg-theme-accent" />
             06
-            <span className="w-8 h-px bg-[#00f5d4]" />
+            <span className="w-8 h-px bg-theme-accent" />
           </p>
           <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight mb-4">
             {"Let's build something"}{" "}
-            <span className="text-[#00f5d4]">great</span>
+            <span className="text-theme-accent">great</span>
           </h2>
-          <p className="text-[#7a99a8] text-lg font-light mb-10">
+          <p className="text-theme-muted text-lg font-light mb-10">
             Open to new opportunities, collaborations, and interesting projects.
           </p>
         </Reveal>
@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="flex justify-center gap-4 flex-wrap mb-10">
             <a
               href={`mailto:${personal.email}`}
-              className="flex items-center gap-2 px-6 py-3 border border-[rgba(0,245,212,0.2)] text-[#7a99a8] text-sm hover:border-[#00f5d4] hover:text-[#00f5d4] hover:bg-[rgba(0,245,212,0.05)] transition-all"
+              className="flex items-center gap-2 px-6 py-3 border border-[rgba(var(--accent-rgb),0.2)] text-theme-muted text-sm hover:border-theme-accent hover:text-theme-accent hover:bg-[rgba(var(--accent-rgb),0.05)] transition-all"
             >
               <span>✉</span> Email
             </a>
@@ -34,7 +34,7 @@ export default function Contact() {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 border border-[rgba(0,245,212,0.2)] text-[#7a99a8] text-sm hover:border-[#00f5d4] hover:text-[#00f5d4] hover:bg-[rgba(0,245,212,0.05)] transition-all"
+              className="flex items-center gap-2 px-6 py-3 border border-[rgba(var(--accent-rgb),0.2)] text-theme-muted text-sm hover:border-theme-accent hover:text-theme-accent hover:bg-[rgba(var(--accent-rgb),0.05)] transition-all"
             >
               <span>⬡</span> LinkedIn
             </a>
@@ -42,7 +42,7 @@ export default function Contact() {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 border border-[rgba(0,245,212,0.2)] text-[#7a99a8] text-sm hover:border-[#00f5d4] hover:text-[#00f5d4] hover:bg-[rgba(0,245,212,0.05)] transition-all"
+              className="flex items-center gap-2 px-6 py-3 border border-[rgba(var(--accent-rgb),0.2)] text-theme-muted text-sm hover:border-theme-accent hover:text-theme-accent hover:bg-[rgba(var(--accent-rgb),0.05)] transition-all"
             >
               <span>◈</span> GitHub
             </a>
@@ -52,7 +52,7 @@ export default function Contact() {
         <Reveal delay={200}>
           <a
             href={`mailto:${personal.email}`}
-            className="font-mono text-[#00f5d4] text-base border-b border-[rgba(0,245,212,0.3)] pb-0.5 hover:border-[#00f5d4] transition-colors"
+            className="font-mono text-theme-accent text-base border-b border-[rgba(var(--accent-rgb),0.3)] pb-0.5 hover:border-theme-accent transition-colors"
           >
             {personal.email}
           </a>

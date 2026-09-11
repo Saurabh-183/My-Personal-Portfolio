@@ -6,6 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -18,6 +19,15 @@ const config: Config = {
           2: "#0a1118",
           3: "#0f1922",
         },
+        theme: {
+          bg: "var(--bg-main)",
+          card: "var(--bg-card)",
+          hover: "var(--bg-card-hover)",
+          text: "var(--text-main)",
+          muted: "var(--text-muted)",
+          accent: "var(--accent)",
+          border: "var(--border-subtle)"
+        }
       },
       fontFamily: {
         mono: ["'Space Mono'", "monospace"],

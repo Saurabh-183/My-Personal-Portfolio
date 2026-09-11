@@ -51,12 +51,12 @@ export default function Cursor() {
     <>
       <div
         ref={cursorRef}
-        className="fixed pointer-events-none z-[9999] w-3 h-3 rounded-full bg-[#00f5d4] transition-transform duration-100 mix-blend-difference"
+        className="fixed pointer-events-none z-[9999] w-3 h-3 rounded-full bg-theme-accent transition-transform duration-100 mix-blend-difference"
         style={{ top: 0, left: 0 }}
       />
       <div
         ref={trailRef}
-        className="fixed pointer-events-none z-[9998] w-9 h-9 rounded-full border border-[#00f5d4] opacity-40"
+        className="fixed pointer-events-none z-[9998] w-9 h-9 rounded-full border border-theme-accent opacity-40"
         style={{ top: 0, left: 0, transition: "left 0.12s ease, top 0.12s ease" }}
       />
     </>
