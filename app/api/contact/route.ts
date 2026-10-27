@@ -120,29 +120,47 @@ export async function POST(req: Request) {
 
     const data = await formSubmitRes.json().catch(() => ({}));
 
-    if (formSubmitRes.ok && (data.success === "true" || data.success === true)) {
+    // Successful submission
+    if (
+      formSubmitRes.ok &&
+      (data.success === "true" ||
+        data.success === true ||
+        data.message?.toLowerCase().includes("success"))
+    ) {
       return NextResponse.json({
         success: true,
-        message: "Your message has been sent successfully! I'll get back to you shortly.",
+        message:
+          "Your message has been sent successfully! I'll get back to you shortly.",
       });
     }
 
     // Check if activation is needed on first use
-    if (data.message && data.message.toLowerCase().includes("activation")) {
+    if (data.message && data.message.toLowerCase().includes("activ")) {
       return NextResponse.json({
         success: true,
         isActivation: true,
         message:
-          "One-time activation required: FormSubmit has sent an 'Activate Form' email to agnihotrisaurabh303@gmail.com. Please open your Gmail and click 'Activate Form' to enable direct message delivery!",
+          "Form activation required: FormSubmit sent an 'Activate Form' link to agnihotrisaurabh303@gmail.com. Please open Gmail and click 'Activate Form' to enable direct message delivery!",
       });
     }
 
-    return NextResponse.json({
-      success: formSubmitRes.ok,
-      message:
-        data.message ||
-        "Message received! Note: Please check your email to activate FormSubmit if this is the first submission.",
-    });
+    if (formSubmitRes.ok) {
+      return NextResponse.json({
+        success: true,
+        message:
+          data.message ||
+          "Your message has been received! Thank you for reaching out.",
+      });
+    }
+
+    return NextResponse.json(
+      {
+        error:
+          data.message ||
+          "Failed to send message. Please try again or reach out directly to agnihotrisaurabh303@gmail.com.",
+      },
+      { status: formSubmitRes.status || 400 }
+    );
   } catch (error: any) {
     console.error("Error in /api/contact:", error);
     return NextResponse.json(

@@ -84,6 +84,7 @@ export default function Contact() {
         setIsActivation(false);
         setStatusMessage(
           data.error ||
+            data.message ||
             "Failed to send your message. Please email directly at " + personal.email
         );
       }
