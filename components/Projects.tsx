@@ -87,14 +87,14 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  {project.github && (
+                  {(project.live || project.github) && (
                     <a
-                      href={project.github}
+                      href={project.live || project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-mono text-xs text-[#00f5d4] flex items-center gap-2 group/link w-fit hover:gap-3 transition-all duration-200 mt-2"
                     >
-                      {project.github.includes("vercel.app") ? "Live Demo" : "View Project"}
+                      {project.live || (project.github && project.github.includes("vercel.app")) ? "Live Demo" : "View Project"}
                       <span className="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                     </a>
                   )}
@@ -170,14 +170,14 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    {project.github && (
+                    {(project.live || project.github) && (
                       <a
-                        href={project.github}
+                        href={project.live || project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition-colors shadow-md"
                       >
-                        {project.github.includes("vercel.app") ? "Launch Live Demo" : "View Source Code"}
+                        {project.live || (project.github && project.github.includes("vercel.app")) ? "Launch Live Demo" : "View Source Code"}
                       </a>
                     )}
                   </div>

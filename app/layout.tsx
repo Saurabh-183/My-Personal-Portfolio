@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-saurabh-181.vercel.app"),
   title: "Saurabh Agnihotri — Software Development Engineer",
   description:
     "Software Development Engineer specializing in React.js, Next.js, and TypeScript. 2+ years building responsive, user-centric web applications.",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Saurabh Agnihotri — Software Development Engineer",
     description: "Software Development Engineer specializing in React.js, Next.js, Node.js, and TypeScript.",
+    url: "https://portfolio-saurabh-181.vercel.app",
     type: "website",
   },
 };

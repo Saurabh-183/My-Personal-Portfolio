@@ -141,7 +141,7 @@ export default function Hero() {
               <div className="text-xs text-[#7a99a8] font-mono tracking-wider uppercase mt-0.5">Years Exp.</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-[#00f5d4]">6+</div>
+              <div className="text-2xl font-bold text-[#00f5d4]">7+</div>
               <div className="text-xs text-[#7a99a8] font-mono tracking-wider uppercase mt-0.5">Projects</div>
             </div>
             <div>
@@ -226,7 +226,7 @@ export default function Hero() {
                 <div className="text-xs text-slate-500 font-mono tracking-wider uppercase mt-1 font-semibold">Years Exp.</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-900">6+</div>
+                <div className="text-2xl font-bold text-slate-900">7+</div>
                 <div className="text-xs text-slate-500 font-mono tracking-wider uppercase mt-1 font-semibold">Projects</div>
               </div>
               <div>
