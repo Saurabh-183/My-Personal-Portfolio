@@ -59,40 +59,102 @@ export default function Contact() {
     setIsActivation(false);
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (res.ok && data.success) {
-        setStatus("success");
-        setIsActivation(!!data.isActivation);
-        setStatusMessage(
-          data.message ||
-            "Your message has been sent successfully! I'll get back to you shortly."
+      // 1. Direct browser submission to FormSubmit (bypasses serverless datacenter IP blocks)
+      let sent = false;
+      try {
+        const directRes = await fetch(
+          `https://formsubmit.co/ajax/${personal.email}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              name: formData.name.trim(),
+              email: formData.email.trim(),
+              _subject:
+                formData.subject.trim() ||
+                `Portfolio Message from ${formData.name.trim()}`,
+              message: formData.message.trim(),
+              _template: "table",
+              _captcha: "false",
+            }),
+          }
         );
-        if (!data.isActivation) {
+
+        const directData = await directRes.json().catch(() => ({}));
+
+        if (
+          directRes.ok &&
+          (directData.success === "true" ||
+            directData.success === true ||
+            directData.message?.toLowerCase().includes("success"))
+        ) {
+          setStatus("success");
+          setIsActivation(false);
+          setStatusMessage(
+            "Your message has been sent successfully! I'll get back to you shortly."
+          );
           setFormData({ name: "", email: "", subject: "", message: "" });
+          sent = true;
+          return;
         }
-      } else {
-        setStatus("error");
-        setIsActivation(false);
-        setStatusMessage(
-          data.error ||
-            data.message ||
-            "Failed to send your message. Please email directly at " + personal.email
+
+        if (
+          directData.message &&
+          directData.message.toLowerCase().includes("activ")
+        ) {
+          setStatus("success");
+          setIsActivation(true);
+          setStatusMessage(
+            "One-time activation required: FormSubmit has sent an 'Activate Form' email to agnihotrisaurabh303@gmail.com. Please open your Gmail and click 'Activate Form' to enable direct message delivery!"
+          );
+          sent = true;
+          return;
+        }
+      } catch (directErr) {
+        console.warn("Direct browser dispatch failed, trying server fallback...", directErr);
+      }
+
+      // 2. Server fallback (/api/contact)
+      if (!sent) {
+        const apiRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const apiData = await apiRes.json().catch(() => ({}));
+
+        if (apiRes.ok && apiData.success) {
+          setStatus("success");
+          setIsActivation(!!apiData.isActivation);
+          setStatusMessage(
+            apiData.message ||
+              "Your message has been sent successfully! I'll get back to you shortly."
+          );
+          if (!apiData.isActivation) {
+            setFormData({ name: "", email: "", subject: "", message: "" });
+          }
+          return;
+        }
+
+        throw new Error(
+          apiData.error ||
+            apiData.message ||
+            "Failed to send message. Please click 'Send Email' to write directly."
         );
       }
     } catch (err: any) {
       console.error(err);
       setStatus("error");
+      setIsActivation(false);
       setStatusMessage(
-        "Network error occurred. Please try again or email directly at " + personal.email
+        err.message ||
+          "Network error occurred. Please try again or email directly at " + personal.email
       );
     }
   };
